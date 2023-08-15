@@ -1,0 +1,728 @@
+/* Fonts from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Reset and base styles */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Global styles for the app */
+/* ... (your existing global styles) */
+
+/* Styles for the drawer */
+.drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 250px;
+  background-color: #003C1A;
+  color: #fff;
+  padding: 16px;
+  transform: translateX(-250px);
+  transition: transform 0.3s ease;
+}
+
+.drawer.active {
+  transform: translateX(0);
+}
+
+.drawer nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.drawer nav ul li {
+  margin-bottom: 8px;
+}
+
+.drawer nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.drawer-toggle {
+  display: none;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  cursor: pointer;
+ 
+}
+.header__text h1{
+  font-size: 4rem;
+
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .similar-jobs-list{
+    display: none;
+  }
+  .header {
+    position: relative;
+  }
+  .header__text h1{
+    font-size: 40px;
+  
+  }
+
+  .section-header .section-header__title p{
+    font-size: 40px;
+  }
+
+  .section-header .section-header__subtitle p{
+    font-size: 18px;
+  }
+
+  .drawer-toggle {
+    display: block;
+  }
+
+  .header nav {
+    display: none;
+  }
+
+  .header nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header nav ul li {
+    margin-bottom: 16px;
+  }
+
+  .drawer {
+    transform: translateX(0);
+  }
+
+  /* Hide image */
+  .header__image {
+    display: none;
+  }
+  .similar-jobs{
+    display: none;
+  }
+}
+/* for tablet */
+@media (max-width: 1024px) {
+  .header {
+    position: relative;
+  }
+
+  .drawer-toggle {
+    display: block;
+  }
+
+  .header nav {
+    display: none;
+  }
+
+  .header nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header nav ul li {
+    margin-bottom: 16px;
+  }
+
+  .drawer {
+    transform: translateX(0);
+  }
+
+  /* Hide image */
+  .header__image {
+    display: none;
+  }
+  .similar-jobs{
+    display: none;
+  }
+  .view-job-page{
+    display: none;
+  }
+}
+
+/* Header styles */
+.header {
+  background-color: #003C1A;
+  color: #fff;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.header h1 {
+  margin: 0;
+  flex: 0;
+}
+
+/* Section header styles */
+.section-header {
+  justify-content: center;
+  text-align: center;
+  /* Remove title and subtitle spacing */
+  margin-bottom: 0;
+}
+
+.section-header__title p {
+  font-size: 50px;
+  font-weight: 700;
+  color: black;
+  margin-bottom: 20px;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.section-header__subtitle p {
+  font-size: 20px;
+  font-weight: 400;
+  /* Grey color */
+  color: #808080;
+  margin-bottom: 20px;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* Sign up dialog styles */
+.sign_up_dialog {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 500px;
+}
+
+.sign_up_dialog__title p {
+  font-size: 50px;
+  font-weight: 700;
+  color: black;
+  margin-bottom: 20px;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+
+/* Style for the avatar image */
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+/* Style for the dropdown menu */
+.dropdown-menu {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  padding: 8px;
+  min-width: 200px;
+  z-index: 1;
+}
+
+/* Style for dropdown menu items */
+/* Navbar.css */
+
+/* Style for the dropdown menu */
+.dropdown-menu {
+  /* ... (previous styles) */
+  min-width: 200px;
+  /* Add some padding between items in the dropdown */
+  padding: 12px 0;
+  z-index: 1;
+}
+
+/* Style for the dropdown menu items */
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  color: #333;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+/* Style for the dropdown menu items' hover effect */
+.menu-item:hover {
+  background-color: #f1f1f1;
+}
+
+/* Style for the left icon in the menu item */
+.left-icon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-right: 12px;
+  /* Adjust the color to match your design */
+  color: #555;
+}
+
+/* Style for the right icon in the menu item */
+.right-icon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-left: auto;
+  /* Adjust the color to match your design */
+  color: #555;
+}
+
+/* Style for the menu item text */
+.menu-item-text {
+  flex: 1;
+}
+
+/* NewJob component styles */
+.new-job {
+  padding-top: 100px;
+}
+
+form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+form div {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+input[type="text"],
+textarea,
+input[type="file"],
+input[type="number"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Style the progress bar during upload */
+progress {
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* Optional: Style the progress value label */
+progress::after {
+  content: attr(value) "%";
+  display: block;
+  margin-top: 4px;
+  text-align: center;
+  font-size: 12px;
+  color: #333;
+}
+
+/* Styles for requirements */
+.requirements-container {
+  margin-bottom: 15px;
+}
+
+.requirement-input {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.requirement-input input {
+  flex: 1;
+  margin-right: 5px;
+}
+
+.requirement-input button {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.requirement-input button:hover {
+  background-color: #c82333;
+}
+
+.add-requirement-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-requirement-button:hover {
+  background-color: #0056b3;
+}
+
+.success-message {
+  color: green;
+  margin-top: 10px;
+}
+
+.error-message {
+  color: red;
+  margin-top: 10px;
+}
+
+/* Footer styles */
+.footer {
+  background-color: #003C1A;
+  color: #fff;
+  padding: 16px;
+  text-align: center;
+}
+
+
+.jobs-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.job {
+  border: 1px solid #ccc;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.job-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.job-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.job-apply {
+  margin-top: 15px;
+}
+
+.job-apply button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.job .job-salary {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.job-apply button:hover {
+  background-color: #0056b3;
+}
+.job-title-name{
+  margin: 0px;
+  padding-bottom: 5px;
+  font-size: 2.5rem
+}
+.detail-job-price{
+  margin: 0px;
+  padding-bottom: 5px;
+  padding-top: 20px;
+  font-weight: bold;
+  font-size: 38px;
+}
+.header{
+  height: 47vh;
+        background-size: cover;
+        background-position: center;
+        color: white;
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+}
+.nav-btn{
+  width: 50px;
+  height: 50px;
+  background: none;
+}
+.nav-btn:hover{
+  background: none;
+}
+.loading-spinner-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 20vh;
+}
+.loading_text{
+margin-top: 10px;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  height: 70px;
+  background-color: black;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  box-shadow: 1px 1px 1px 1px rgba(116, 110, 110, 0.199);
+  z-index: 999; /* Add a higher z-index value */
+}
+.header-inner{
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo{
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: #ece9ea;
+}
+.logo:hover{
+  color: whitesmoke;
+}
+
+nav{
+  flex: 0.5;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+footer{
+  height: 200px;
+  background: #505152;
+  color: white;
+}
+
+
+.hamburger-btn{
+  font-size: 1.7rem;
+  width: 40px;
+  height: 35px;
+  right: 30px;
+  outline: none;
+  color: whitesmoke;
+  background: none;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  padding-bottom: 15px;
+}
+.hamburger-btn:hover{
+  background: none;
+}
+.addTransiton{
+  transform: translateX(170px);
+  transition: transform 0.5s ease-in-out;
+}
+.removeTransition{
+  transform: translateX(20px);
+  transition: transform 0.5s ease-in-out;
+}
+
+#sidebar-list{
+  background-color: gray;
+  height: 100vh;
+  width: 170px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin-top: 70px;
+  box-shadow: 1px 1px 1px 1px rgba(116, 110, 110, 0.199);
+}
+.nav-big{
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  width: 70%;
+  font-weight: bold;
+}
+
+.nav-big-link{
+ cursor: pointer;
+ color: white;
+ text-decoration: none !important;
+}
+
+.nav-small{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-around;
+  margin: auto;
+  height: 40%;
+  margin-top: 10px;
+  position: fixed;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  width: 70%;
+  font-weight: bold;
+
+}
+.nav-small-link{
+  cursor: pointer;
+  color: whitesmoke;
+  padding-bottom: 5px;
+}
+
+
+
+
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-top: 4px solid #000;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.pagination_button{
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+.pagination_button span{
+  width: 10%;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+.pagination_button button{
+  width: 10%;
+}
+.joblist_list_card{
+  padding: 30px
+}
+.joblist_list_card input{
+  
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 300px;
+    box-shadow: none;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+/* ... (other styles if needed) */
+
+@media (max-width: 768px) {
+  .header{
+    height: 30vh;
+  }
+header{
+  display: flex;
+  position: fixed;
+}
+.job-title-name{
+  font-size: 1.8rem;
+}
+.detail-save-btn{
+  display: none;
+}
+.detail-job-price{
+  margin: 0px;
+  padding-bottom: 5px;
+  padding-top: 20px;
+  font-weight: bold;
+  font-size: 27px;
+}
+
+.nav-menu {
+  display: none; /* Hide the menu by default */
+  flex-direction: column;
+  position: absolute;
+  width: 100%;
+  background-color: #fff; /* Adjust background color as needed */
+  left: 0;
+  transition: all 0.3s ease-in-out;
+  opacity: 0.95;
+  z-index: 999;
+  transform: translateX(-100%); /* Start off-screen */
+}
+.pagination_button span{
+  width: 25%;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+.pagination_button button{
+  width: 20%;
+}
+
+
+.nav-menu.show {
+ height: 500vh;
+ width: 100%;
+ background-color: red;
+}
+
+
+
+}
